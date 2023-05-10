@@ -1,0 +1,75 @@
+`timescale 1ns / 1ps
+
+module ram(clk, wena, addr, data_in, data_out);
+input clk; //输入时钟
+input wena; //低电平表示读数据，高电平表示写数据
+input [3:0] addr; //4 位地址
+input [7:0] data_in; //输入数据
+output [7:0] data_out; //输出数据
+
+reg [7:0] memory_0;
+reg [7:0] memory_1;
+reg [7:0] memory_2;
+reg [7:0] memory_3;
+reg [7:0] memory_4;
+reg [7:0] memory_5;
+reg [7:0] memory_6;
+reg [7:0] memory_7;
+reg [7:0] memory_8;
+reg [7:0] memory_9;
+reg [7:0] memory_10;
+reg [7:0] memory_11;
+reg [7:0] memory_12;
+reg [7:0] memory_13;
+reg [7:0] memory_14;
+reg [7:0] memory_15;
+
+reg [7:0] temp;
+
+always @(posedge clk) begin
+    if(wena)begin
+        temp<=0;
+        case(addr)
+            4'b0000: memory_0<=data_in;
+            4'b0001: memory_1<=data_in;
+            4'b0010: memory_2<=data_in;
+            4'b0011: memory_3<=data_in;
+            4'b0100: memory_4<=data_in;
+            4'b0101: memory_5<=data_in;
+            4'b0110: memory_6<=data_in;
+            4'b0111: memory_7<=data_in;
+            4'b1000: memory_8<=data_in;
+            4'b1001: memory_9<=data_in;
+            4'b1010: memory_10<=data_in;
+            4'b1011: memory_11<=data_in;
+            4'b1100: memory_12<=data_in;
+            4'b1101: memory_13<=data_in;
+            4'b1110: memory_14<=data_in;
+            4'b1111: memory_15<=data_in;
+        endcase
+    end
+    else begin
+            case(addr)
+            4'b0000: temp<=memory_0;
+            4'b0001: temp<=memory_1;
+            4'b0010: temp<=memory_2;
+            4'b0011: temp<=memory_3;
+            4'b0100: temp<=memory_4;
+            4'b0101: temp<=memory_5;
+            4'b0110: temp<=memory_6;
+            4'b0111: temp<=memory_7;
+            4'b1000: temp<=memory_8;
+            4'b1001: temp<=memory_9;
+            4'b1010: temp<=memory_10;
+            4'b1011: temp<=memory_11;
+            4'b1100: temp<=memory_12;
+            4'b1101: temp<=memory_13;
+            4'b1110: temp<=memory_14;
+            4'b1111: temp<=memory_15;
+        endcase
+    end
+end
+
+assign data_out=temp;
+
+endmodule

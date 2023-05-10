@@ -1,0 +1,7 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+C:/Users/Karloz/Desktop/计组实验/Verilog/singlecycleCPU/singlecycleCPU.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+C:/Users/Karloz/Desktop/计组实验/Verilog/singlecycleCPU/singlecycleCPU.srcs/sim_1/new/sim.v,1637899128,verilog,,,,SingleCircleCPUTest,,,,,,,,
+C:/Users/Karloz/Desktop/计组实验/Verilog/singlecycleCPU/singlecycleCPU.srcs/sources_1/new/SCC.v,1638865842,verilog,,C:/Users/Karloz/Desktop/计组实验/Verilog/singlecycleCPU/singlecycleCPU.srcs/sim_1/new/sim.v,,ALU;CPU;Control;InstMemory;PC;add_sub;adder;adder_8;baseop;mult;regfile,,,,,,,,

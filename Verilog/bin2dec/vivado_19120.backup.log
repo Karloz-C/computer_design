@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Oct 16 17:32:59 2021
+# Process ID: 19120
+# Current directory: C:/Users/Karloz/Desktop/bin2dec
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1356 C:\Users\Karloz\Desktop\bin2dec\bin2dec.xpr
+# Log file: C:/Users/Karloz/Desktop/bin2dec/vivado.log
+# Journal file: C:/Users/Karloz/Desktop/bin2dec\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Karloz/Desktop/bin2dec/bin2dec.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Software/Vivado/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 16 18:30:24 2021...

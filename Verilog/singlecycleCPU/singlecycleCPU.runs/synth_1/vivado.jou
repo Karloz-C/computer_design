@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Dec  7 16:27:55 2021
+# Process ID: 5644
+# Current directory: C:/Users/Karloz/Desktop/计组实验/Verilog/singlecycleCPU/singlecycleCPU.runs/synth_1
+# Command line: vivado.exe -log CPU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CPU.tcl
+# Log file: C:/Users/Karloz/Desktop/计组实验/Verilog/singlecycleCPU/singlecycleCPU.runs/synth_1/CPU.vds
+# Journal file: C:/Users/Karloz/Desktop/计组实验/Verilog/singlecycleCPU/singlecycleCPU.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source CPU.tcl -notrace

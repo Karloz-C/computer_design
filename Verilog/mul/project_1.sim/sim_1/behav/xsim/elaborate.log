@@ -1,0 +1,132 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Software/Vivado/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto ad8c8227379b4daf86edf5f861ac17dd --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mul_test_behav xil_defaultlib.mul_test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'b' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:262]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 3 for port 'aluc' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:263]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'cin' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:264]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'b' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:86]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'a' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:275]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'b' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:276]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 's' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:277]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 3 for port 'aluc' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:219]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'cin' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:220]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 4 for port 'r' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:221]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 3 for port 'aluc' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:231]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 4 for port 'r' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:233]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'a' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:281]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'b' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:282]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 's' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:283]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'a' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:287]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'b' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:288]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 's' [C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v:289]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 246. Module mult doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 131. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 58. Module add_sub doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 101. Module baseop doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 208. Module adder_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 131. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 58. Module add_sub doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 101. Module baseop doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 131. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 58. Module add_sub doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 101. Module baseop doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 208. Module adder_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 131. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 58. Module add_sub doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 101. Module baseop doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 131. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 58. Module add_sub doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 101. Module baseop doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 208. Module adder_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 131. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 58. Module add_sub doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 101. Module baseop doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 131. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 58. Module add_sub doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 14. Module adder_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 1. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Karloz/Desktop/mul/project_1.srcs/sources_1/new/mul.v" Line 101. Module baseop doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.adder_4
+Compiling module xil_defaultlib.add_sub
+Compiling module xil_defaultlib.baseop
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.adder_8
+Compiling module xil_defaultlib.mult
+Compiling module xil_defaultlib.mul_test
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot mul_test_behav

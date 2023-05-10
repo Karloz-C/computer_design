@@ -1,0 +1,164 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Nov  3 22:02:41 2021
+# Process ID: 3984
+# Current directory: C:/Users/Karloz/Desktop/RAM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26200 C:\Users\Karloz\Desktop\RAM\RAM.xpr
+# Log file: C:/Users/Karloz/Desktop/RAM/vivado.log
+# Journal file: C:/Users/Karloz/Desktop/RAM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Karloz/Desktop/RAM/RAM.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Software/Vivado/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Karloz/Desktop/RAM/RAM.runs/synth_1
+
+launch_runs synth_1 -jobs 12
+[Wed Nov  3 22:04:07 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Karloz/Desktop/RAM/RAM.runs/synth_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Wed Nov  3 22:05:06 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Karloz/Desktop/RAM/RAM.runs/impl_1/runme.log
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: RAM
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1403.906 ; gain = 173.301
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'RAM' [C:/Users/Karloz/Desktop/RAM/RAM.srcs/sources_1/new/RAM.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (1#1) [C:/Users/Karloz/Desktop/RAM/RAM.srcs/sources_1/new/RAM.v:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1442.926 ; gain = 212.320
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1463.340 ; gain = 232.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1463.340 ; gain = 232.734
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1540.105 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 1657.863 ; gain = 427.258
+6 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 1657.863 ; gain = 555.082
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1690.215 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  RAM32X1S => RAM32X1S (RAMS32): 8 instances
+
+set_property IOSTANDARD LVCMOS33 [get_ports [list {addr[4]} {addr[3]} {addr[2]} {addr[1]} {addr[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {data_in[7]} {data_in[6]} {data_in[5]} {data_in[4]} {data_in[3]} {data_in[2]} {data_in[1]} {data_in[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {data_out[7]} {data_out[6]} {data_out[5]} {data_out[4]} {data_out[3]} {data_out[2]} {data_out[1]} {data_out[0]}]]
+set_property package_pin "" [get_ports [list  wena]]
+place_ports clk E3
+place_ports wena L16
+set_property IOSTANDARD LVCMOS33 [get_ports [list clk]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list wena]]
+place_ports {addr[0]} M13
+place_ports {addr[1]} R15
+place_ports {addr[2]} R17
+place_ports {addr[3]} T18
+place_ports {addr[4]} U18
+set_property is_loc_fixed false [get_ports [list  {addr[4]}]]
+set_property is_loc_fixed true [get_ports [list  {addr[4]}]]
+place_ports {data_in[0]} R13
+place_ports {data_in[1]} T8
+place_ports {data_in[2]} U8
+place_ports {data_in[3]} R16
+place_ports {data_in[4]} T13
+place_ports {data_in[5]} H6
+place_ports {data_in[6]} U12
+place_ports {data_in[7]} U11
+place_ports {data_out[0]} H17
+place_ports {data_out[1]} K15
+place_ports {data_out[2]} J13
+place_ports {data_out[3]} N14
+place_ports {data_out[4]} R18
+place_ports {data_out[5]} V7
+set_property package_pin "" [get_ports [list  {data_out[6]}]]
+place_ports {data_out[5]} V17
+place_ports {data_out[6]} U17
+place_ports {data_out[7]} U16
+file mkdir C:/Users/Karloz/Desktop/RAM/RAM.srcs/constrs_1/new
+close [ open C:/Users/Karloz/Desktop/RAM/RAM.srcs/constrs_1/new/ram.xdc w ]
+add_files -fileset constrs_1 C:/Users/Karloz/Desktop/RAM/RAM.srcs/constrs_1/new/ram.xdc
+set_property target_constrs_file C:/Users/Karloz/Desktop/RAM/RAM.srcs/constrs_1/new/ram.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Karloz/Desktop/RAM/RAM.runs/synth_1
+
+launch_runs synth_1 -jobs 12
+[Wed Nov  3 22:13:01 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Karloz/Desktop/RAM/RAM.runs/synth_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Wed Nov  3 22:13:32 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Karloz/Desktop/RAM/RAM.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292AA7AA2A
+set_property PROGRAM.FILE {C:/Users/Karloz/Desktop/RAM/RAM.runs/impl_1/RAM.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Karloz/Desktop/RAM/RAM.runs/impl_1/RAM.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292AA7AA2A
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  3 22:46:08 2021...

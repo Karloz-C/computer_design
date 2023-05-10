@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Oct 16 16:24:13 2021
+# Process ID: 13012
+# Current directory: C:/Users/Karloz/Desktop/bin2dec/bin2dec.runs/synth_1
+# Command line: vivado.exe -log bin2dec.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bin2dec.tcl
+# Log file: C:/Users/Karloz/Desktop/bin2dec/bin2dec.runs/synth_1/bin2dec.vds
+# Journal file: C:/Users/Karloz/Desktop/bin2dec/bin2dec.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source bin2dec.tcl -notrace

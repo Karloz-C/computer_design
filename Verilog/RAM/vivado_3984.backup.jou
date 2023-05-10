@@ -1,0 +1,76 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Nov  3 22:02:41 2021
+# Process ID: 3984
+# Current directory: C:/Users/Karloz/Desktop/RAM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26200 C:\Users\Karloz\Desktop\RAM\RAM.xpr
+# Log file: C:/Users/Karloz/Desktop/RAM/vivado.log
+# Journal file: C:/Users/Karloz/Desktop/RAM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Karloz/Desktop/RAM/RAM.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+synth_design -rtl -name rtl_1
+close_design
+open_run synth_1 -name synth_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list {addr[4]} {addr[3]} {addr[2]} {addr[1]} {addr[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {data_in[7]} {data_in[6]} {data_in[5]} {data_in[4]} {data_in[3]} {data_in[2]} {data_in[1]} {data_in[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {data_out[7]} {data_out[6]} {data_out[5]} {data_out[4]} {data_out[3]} {data_out[2]} {data_out[1]} {data_out[0]}]]
+set_property package_pin "" [get_ports [list  wena]]
+place_ports clk E3
+place_ports wena L16
+set_property IOSTANDARD LVCMOS33 [get_ports [list clk]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list wena]]
+place_ports {addr[0]} M13
+place_ports {addr[1]} R15
+place_ports {addr[2]} R17
+place_ports {addr[3]} T18
+place_ports {addr[4]} U18
+set_property is_loc_fixed false [get_ports [list  {addr[4]}]]
+set_property is_loc_fixed true [get_ports [list  {addr[4]}]]
+place_ports {data_in[0]} R13
+place_ports {data_in[1]} T8
+place_ports {data_in[2]} U8
+place_ports {data_in[3]} R16
+place_ports {data_in[4]} T13
+place_ports {data_in[5]} H6
+place_ports {data_in[6]} U12
+place_ports {data_in[7]} U11
+place_ports {data_out[0]} H17
+place_ports {data_out[1]} K15
+place_ports {data_out[2]} J13
+place_ports {data_out[3]} N14
+place_ports {data_out[4]} R18
+place_ports {data_out[5]} V7
+set_property package_pin "" [get_ports [list  {data_out[6]}]]
+place_ports {data_out[5]} V17
+place_ports {data_out[6]} U17
+place_ports {data_out[7]} U16
+file mkdir C:/Users/Karloz/Desktop/RAM/RAM.srcs/constrs_1/new
+close [ open C:/Users/Karloz/Desktop/RAM/RAM.srcs/constrs_1/new/ram.xdc w ]
+add_files -fileset constrs_1 C:/Users/Karloz/Desktop/RAM/RAM.srcs/constrs_1/new/ram.xdc
+set_property target_constrs_file C:/Users/Karloz/Desktop/RAM/RAM.srcs/constrs_1/new/ram.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/Karloz/Desktop/RAM/RAM.runs/impl_1/RAM.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Karloz/Desktop/RAM/RAM.runs/impl_1/RAM.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

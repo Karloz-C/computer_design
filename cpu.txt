@@ -1,0 +1,548 @@
+`timescale 1ns / 1ps
+
+module adder(
+input ia,
+input ib,
+input cin,
+output cout,
+output sum
+);
+
+assign cout=(ia & ib) | (cin & (ia | ib));
+assign sum=ia^ib^cin;
+
+endmodule
+
+
+module adder_8(
+ input [7:0] a,
+ input [7:0] b,
+ input cin,
+ output cout,
+ output [7:0] s,
+ output overflow
+);
+wire[7:0] carryout;
+
+adder adder0(
+.ia  (a[0]),
+.ib  (b[0]),
+.cin (cin),
+.cout  (carryout[0]),
+.sum  (s[0])
+);
+
+genvar i;
+generate
+for(i=1; i<=7; i=i+1) begin: adder_gen
+adder adder_gen(
+.ia  (a[i]),
+.ib  (b[i]),
+.cin (carryout[i-1]),
+.cout  (carryout[i]),
+.sum  (s[i])
+);
+
+end
+endgenerate
+
+assign overflow=carryout[6]^carryout[7];
+assign cout=carryout[7];
+
+endmodule
+
+
+
+module add_sub(
+input [7:0] a,
+input [7:0] b,
+input cin,
+input operator,
+output [7:0] result,
+output ZF,
+       CF,
+       OF,
+       SF,
+       PF
+);
+wire [7:0] re;
+wire tag[1:0];
+wire co[1:0];
+
+adder_8 add1(
+.a  (a),
+.b  (b^{8{operator}}),
+.cin (operator),
+.s(re),
+.overflow(tag[0]),
+.cout(co[0])
+);
+
+adder_8 add2(
+.a  (re),
+.b  (0),
+.cin (cin),
+.s(result),
+.overflow(tag[1]),
+.cout(co[1])
+);
+
+assign ZF=~|result;
+assign CF=(co[0]|co[1])^operator;
+assign OF=tag[1]|tag[0];
+assign SF=result[7];
+assign PF=^result;
+
+endmodule
+
+
+module baseop(
+input [7:0]a,
+input [7:0]b,
+input [2:0]aluc,
+output [7:0]r,
+output ZF,
+       CF,
+       OF,
+       SF,
+       PF
+);
+
+reg[7:0]tempres;
+
+always@(*)
+        case(aluc)
+        3'b100:tempres=a&b;
+        3'b101:tempres=a|b;
+        3'b110:tempres=a^b;
+        3'b111:tempres=~(a|b);
+        endcase
+
+assign r=tempres;
+assign ZF=~|r;
+assign CF=0;
+assign OF=0;
+assign SF=r[7];
+assign PF=^r;
+endmodule
+
+
+
+module mult(
+ input [3:0] a,
+ input [3:0] b,
+ output [7:0] s,
+ output ZF,
+       CF,
+       OF,
+       SF,
+       PF
+);
+
+wire [3:0] ta0,ta1,ta2;
+wire [3:0] ra;
+wire [6:0] s1,s2;
+
+assign ta0=a&{4{b[0]}};
+assign ta1=a&{4{b[1]}};
+assign ta2=a&{4{b[2]}};
+
+add_sub adderr(
+.a((~a)),
+.b(1),
+.cin(0),
+.operator(0),
+.result(ra),
+.ZF(),
+.CF(),
+.OF(),
+.SF(),
+.PF()
+);
+
+adder_8 add1(
+.a({{3{a[3]&b[0]}}, ta0}),
+.b({{2{a[3]&b[1]}}, ta1, {1'b0}}),
+.cin(0),
+.cout(),
+.s(s1[6:0]),
+.overflow()
+);
+
+adder_8 add2(
+.a({{1{a[3]&b[2]}}, ta2,{2'b00}}),
+.b({ra&{4{b[3]}},{3'b000}}),
+.cin(0),
+.cout(),
+.s(s2[6:0]),
+.overflow()
+);
+
+adder_8 add3(
+.a(s1),
+.b(s2),
+.cin(0),
+.cout(),
+.s(s[6:0]),
+.overflow()
+);
+
+assign s[7]=(a[3]^b[3])&~(a==4'b0)&~(b==4'b0);
+
+assign ZF=~|s;
+assign CF=1'b0;
+assign OF=1'b0;
+assign SF=s[7];
+assign PF=^s;
+
+endmodule
+
+
+module alu(
+	input[7:0]a,
+	input[7:0]b,
+	input[3:0]aluc,
+	input cin,
+	output reg [7:0]r,
+	output reg ZF,
+	output reg CF,
+ 	output reg OF,
+ 	output reg SF,
+ 	output reg PF
+);
+wire [7:0] r1,r2;
+wire [7:0]r3;
+reg [7:0]temp;
+wire [2:0]zf,cf,of,sf,pf;
+reg [4:0]flag;
+
+add_sub adder(
+.a(a),
+.b((aluc[0]^aluc[2])==1?1'b1:b),
+.cin(cin),
+.operator(aluc[1]),
+.result(r1),
+.ZF(zf[1]),
+.CF(cf[1]),
+.OF(of[1]),
+.SF(sf[1]),
+.PF(pf[1])
+);
+
+baseop base(
+.a(a),
+.b(b),
+.aluc(aluc),
+.r(r2[7:0]),
+.ZF(zf[0]),
+.CF(cf[0]),
+.OF(of[0]),
+.SF(sf[0]),
+.PF(pf[0])
+);
+
+mult Mult(
+.a(a),
+.b(b),
+.s(r3),
+.ZF(zf[2]),
+.CF(cf[2]),
+.OF(of[2]),
+.SF(sf[2]),
+.PF(pf[2])
+);
+
+
+always@(*)
+case(aluc)
+4'b0000,4'b0001,4'b0010,4'b0011:begin
+        temp=r1;
+        flag[0]=zf[1];
+        flag[1]=cf[1];
+        flag[2]=of[1];
+        flag[3]=sf[1];
+        flag[4]=pf[1];
+        end
+4'b0100,4'b0101,4'b0110:begin
+        temp=r2;
+        flag[0]=zf[0];
+        flag[1]=cf[0];
+        flag[2]=of[0];
+        flag[3]=sf[0];
+        flag[4]=pf[0];
+        end
+4'b0111:
+        temp=sf[1]^of[1];
+default:begin
+    temp=r3;
+    flag[0]=zf[2];
+    flag[1]=cf[2];
+    flag[2]=of[2];
+    flag[3]=sf[2];
+    flag[4]=pf[2];
+end
+endcase
+
+always@(*)
+begin
+    r=temp;
+    ZF=flag[0];
+    CF=flag[1];
+    OF=flag[2];
+    SF=flag[3];
+    PF=flag[4];
+end
+
+endmodule
+
+
+module CPU(
+input clk,
+input [7:0] instruct,
+input wenable,
+output  [7:0] led_id,
+output  [6:0] out_led,
+output  ZF,
+output  CF,
+output  OF,
+output  SF,
+output  PF
+);
+
+reg [7:0] regfile[2:0];
+reg [7:0] res;
+reg [2:0]ALUop;
+wire [7:0]data_reg1;
+wire [7:0]data_reg2;
+wire [3:0]ALU_op_calc;
+wire MEMop;
+wire [2:0]WB_op_num;
+wire [7:0]alu_res;
+
+ID id(
+.instruct (instruct),
+.Reg0 (regfile[0]),
+.Reg1 (regfile[1]),
+.Reg2 (regfile[2]),
+.data_reg1(data_reg1),
+.data_reg2(data_reg2),
+.ALU_op_calc(ALU_op_calc),
+.MEMop(MEMop),
+.WB_op_num(WB_op_num)
+);
+
+
+EX ex(
+.data_reg1(data_reg1),
+.data_reg2(data_reg2),
+.ALU_op_calc(ALU_op_calc),
+.res(alu_res),
+.ZF(ZF),
+.CF(CF),
+.OF(OF),
+.SF(SF),
+.PF(PF)
+);
+
+
+always@(*)begin
+case({MEMop,WB_op_num[2]})
+2'b00:
+    res=alu_res;
+2'b01:
+    res=8'b0;
+2'b10:
+    res=data_reg2;
+endcase
+end
+
+always@(posedge wenable)begin
+    if(wenable)
+        if(WB_op_num[2])regfile[WB_op_num[1:0]]=data_reg1;
+        else regfile[2]=res;
+end
+
+bin2dec show(
+.clk(clk),
+.n(res),
+.led_id(led_id),
+.out_led(out_led)
+);
+
+
+
+endmodule
+
+
+module ID(
+input [7:0] instruct,
+input   [7:0]Reg0,
+input   [7:0]Reg1,
+input   [7:0]Reg2,
+output reg [7:0]data_reg1,
+output reg [7:0]data_reg2,
+output reg [3:0]ALU_op_calc,     //flag+calc
+output reg MEMop,
+output reg [2:0]WB_op_num       //flag+regnum
+);
+
+
+always@(*)begin
+case(instruct[7:6])
+2'b10:
+    begin
+
+    data_reg1={{4{instruct[3]}},instruct[3:0]};
+    WB_op_num={1'b1,instruct[5:4]};
+    ALU_op_calc=4'b0000;
+    MEMop=1'b0;
+
+    end
+2'b11:
+begin
+
+    if(instruct[5]==0)begin
+    case(instruct[3:2])
+        2'b00:data_reg1=Reg0;
+        2'b01:data_reg1=Reg1;
+        2'b10:data_reg1=Reg2;
+        endcase
+    case(instruct[1:0])
+        2'b00:data_reg2=Reg0;
+        2'b01:data_reg2=Reg1;
+        2'b10:data_reg2=Reg2;
+        endcase
+        ALU_op_calc=4'b1111;
+        MEMop=1'b0;
+    end
+
+    else begin
+        case(instruct[1:0])
+        2'b00:data_reg2=Reg0;
+        2'b01:data_reg2=Reg1;
+        2'b10:data_reg2=Reg2;
+        endcase
+        ALU_op_calc=4'b0000;
+        MEMop=1'b1;
+    end
+     WB_op_num=3'b000;
+end
+
+default:begin
+case(instruct[3:2])
+        2'b00:data_reg1=Reg0;
+        2'b01:data_reg1=Reg1;
+        2'b10:data_reg1=Reg2;
+        endcase
+case(instruct[1:0])
+        2'b00:data_reg2=Reg0;
+        2'b01:data_reg2=Reg1;
+        2'b10:data_reg2=Reg2;
+        endcase
+
+ALU_op_calc=instruct[7:4];
+WB_op_num=3'b000;
+MEMop=1'b0;
+
+end
+
+
+endcase
+
+
+end
+
+endmodule
+
+
+module EX(
+input  [7:0]data_reg1,
+input  [7:0]data_reg2,
+input  [3:0]ALU_op_calc,     //flag+calc
+output  [7:0]res,
+output  ZF,
+output  CF,
+output  OF,
+output  SF,
+output  PF
+);
+
+
+alu ex_calc(
+.a(data_reg1),
+.b(data_reg2),
+.aluc(ALU_op_calc),
+.cin(0),
+.r(res),
+.ZF(ZF),
+.CF(CF),
+.OF(OF),
+.SF(SF),
+.PF(PF)
+);
+
+endmodule
+
+
+module bin2dec (
+    input wire clk,      //时钟，频率100MHz
+    input wire [7:0] n,       //输入
+    output reg [7:0] led_id,
+    output reg [6:0] out_led
+    );
+
+wire [7:0] abs;                     //存储 输入n的绝对值
+wire [7:0] flag={8{n[7]}};           //r_flag用于计算补码
+assign abs   = (n^flag)+flag[0];    //计算 输入n的绝对值
+
+//8位2进制对应十进制至多3位
+wire [7:0] num [0:3];               //从0到3 -> 符号位，百位，十位，个位
+assign num[0] = 4'ha+flag[0];       //计算符号位，0xa：正数,0xb:负数
+assign num[1] = abs / 100 % 10;     //计算百位
+assign num[2] = abs / 10 % 10;      //计算十位
+assign num[3] = abs % 10;           //计算个位
+
+reg [1:0] id=2'b00;                //id从0至3->从左到右四个数码管
+parameter CNT_MAX = 99999;//设定时钟计数上限。
+reg [31:0] cnt_1ms;//计数
+//用100MHz时钟从0到 99999计数即为1ms
+always @ (posedge clk)//时钟上升沿
+    if (cnt_1ms == CNT_MAX)
+        cnt_1ms <= 1'b0;
+    else
+        cnt_1ms <= cnt_1ms+1'b1;
+
+//每1ms切换一次id
+always@(posedge clk )
+    if(cnt_1ms == CNT_MAX - 1'b1)
+        id <= id+1'b1;
+
+//选择灯
+always @ (id)
+    case(id)
+        4'b0000: led_id = 8'b1111_0111;   //0
+        4'b0001: led_id = 8'b1111_1011;   //1
+        4'b0010: led_id = 8'b1111_1101;   //2
+        4'b0011: led_id = 8'b1111_1110;   //3
+        default: led_id = 8'b0000_0000;  //default to 0, should not happen
+    endcase
+
+ //显示数字
+ always @ (id)
+    case(num[id])
+        4'b0000: out_led = 7'b0000001;    //0
+        4'b0001: out_led = 7'b1001111;    //1
+        4'b0010: out_led = 7'b0010010;    //2
+        4'b0011: out_led = 7'b0000110;    //3
+        4'b0100: out_led = 7'b1001100;    //4
+        4'b0101: out_led = 7'b0100100;    //5
+        4'b0110: out_led = 7'b0100000;    //6
+        4'b0111: out_led = 7'b0001111;    //7
+        4'b1000: out_led = 7'b0000000;    //8
+        4'b1001: out_led = 7'b0000100;    //9
+        4'b1010: out_led = 7'b1111111;    //a->不显示
+        4'b1011: out_led = 7'b1111110;    //b->显示
+        default: out_led = 7'b1111111;    //default to 7'b1111111, should not happen
+    endcase
+
+endmodule

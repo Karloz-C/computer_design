@@ -1,0 +1,100 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Fri Oct 29 18:44:31 2021
+| Host         : LAPTOP-NSV5LM1M running 64-bit major release  (build 9200)
+| Command      : report_methodology -file alu_methodology_drc_routed.rpt -pb alu_methodology_drc_routed.pb -rpx alu_methodology_drc_routed.rpx
+| Design       : alu
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 13
++-----------+----------+-------------------+------------+
+| Rule      | Severity | Description       | Violations |
++-----------+----------+-------------------+------------+
+| TIMING-20 | Warning  | Non-clocked latch | 13         |
++-----------+----------+-------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch base/tempres_reg[0] cannot be properly analyzed as its control pin base/tempres_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch base/tempres_reg[1] cannot be properly analyzed as its control pin base/tempres_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch base/tempres_reg[2] cannot be properly analyzed as its control pin base/tempres_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch base/tempres_reg[3] cannot be properly analyzed as its control pin base/tempres_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch flag_reg[0] cannot be properly analyzed as its control pin flag_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch flag_reg[1] cannot be properly analyzed as its control pin flag_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch flag_reg[2] cannot be properly analyzed as its control pin flag_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch flag_reg[3] cannot be properly analyzed as its control pin flag_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch flag_reg[4] cannot be properly analyzed as its control pin flag_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch temp_reg[0] cannot be properly analyzed as its control pin temp_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch temp_reg[1] cannot be properly analyzed as its control pin temp_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch temp_reg[2] cannot be properly analyzed as its control pin temp_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch temp_reg[3] cannot be properly analyzed as its control pin temp_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+

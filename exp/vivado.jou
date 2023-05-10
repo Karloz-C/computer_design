@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed May 10 16:43:23 2023
+# Process ID: 8932
+# Current directory: D:/File/课程资料/计算机组成与设计/计组实验/exp
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20728 D:\File\课程资料\计算机组成与设计\计组实验\exp\exp.xpr
+# Log file: D:/File/课程资料/计算机组成与设计/计组实验/exp/vivado.log
+# Journal file: D:/File/课程资料/计算机组成与设计/计组实验/exp\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/File/课程资料/计算机组成与设计/计组实验/exp/exp.xpr
+update_compile_order -fileset sources_1
